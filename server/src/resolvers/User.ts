@@ -20,9 +20,8 @@ export class UserResolver {
 
   @Query(() => String)
   @UseMiddleware(isAuth)
-  unauthorized(@Ctx() { payload }: Context) {
-    console.log('payload ', payload)
-    return `User ${payload} is not authorized to use graphql`
+  authorizedPage(@Ctx() { payload }: Context) {
+    return `User ${payload!.userId} connected`
   }
 
   @Mutation(() => LoginResponse)
