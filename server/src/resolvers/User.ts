@@ -2,7 +2,7 @@ import { Resolver, Query, Mutation, Arg, ObjectType, Field, Ctx, UseMiddleware }
 import { hash, compare } from 'bcryptjs'
 import { User } from '../entity/User'
 import { Context } from '../helpers/Context'
-import { createToken, TokenType } from '../helpers/token'
+import { createToken, TokenType, hydrateToken } from '../helpers/token'
 import { isAuth } from '../helpers/middleware/isAuth'
 
 @ObjectType()
@@ -41,14 +41,9 @@ export class UserResolver {
     if (!valid) {
       throw new Error('bad password')
     }
+
     // refresh token
-    res.cookie('jwt-auth',
-      createToken(TokenType.REFRESH, user),
-      {
-        httpOnly: true
-      }
-      // more options
-    )
+    hydrateToken(res, TokenType.REFRESH, user)
 
     return {
       accessToken: createToken(TokenType.ACCESS, user)
