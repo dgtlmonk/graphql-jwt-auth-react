@@ -3,13 +3,11 @@ import { Context } from '../Context';
 import { verify } from "jsonwebtoken";
 import { ACCESS_TOKEN_SECRET } from '../../config/dotenv'
 
-
-// we're expecting for authorization token
-// bearer somehash123
-
 export const isAuth: MiddlewareFn<Context> = ({ context }, next) => {
   const authorization = context.req.headers['authorization'];
 
+  // we're expecting for authorization token
+  // bearer somehash123
   if (!authorization) {
     throw new Error("Not authenticated")
   }

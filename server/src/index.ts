@@ -32,7 +32,7 @@ import { createToken, TokenType, hydrateToken } from "./helpers/token";
 
     const user = await User.findOne({ id: payload.userId })
 
-    if (!user) {
+    if (!user || (user.tokenVersion !== payload.tokenVersion)) {
       return res.send({ ok: false, accessToken: '' })
     }
 

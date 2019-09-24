@@ -17,7 +17,7 @@ export const createToken = (type: TokenType, user: User) => {
   }
 
   if (type === TokenType.REFRESH) {
-    return sign({ userId: user.id }, `${ACCESS_TOKEN_REFRESH}`, { expiresIn: "7d" })
+    return sign({ userId: user.id, tokenVersion: user.tokenVersion }, `${ACCESS_TOKEN_REFRESH}`, { expiresIn: "7d" })
   }
 }
 
