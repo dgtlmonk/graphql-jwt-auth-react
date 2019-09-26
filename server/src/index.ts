@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 import express from "express";
-import { UserResolver } from "./resolvers/User"
+import { UserResolver } from "./resolvers/User";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import cookieParser from "cookie-parser";
@@ -11,38 +11,39 @@ import { createToken, TokenType, hydrateToken } from "./helpers/token";
 
 (async () => {
   const app = express();
-  app.use(cookieParser())
+  app.use(cookieParser());
   app.post("/refresh-token", async (req, res) => {
-    console.log('header cookies ', req.cookies);
-    const token = req.cookies['jwt-auth'];
+    console.log("header cookies ", req.cookies);
+    const token = req.cookies["jwt-auth"];
 
     if (!token) {
-      return res.send({ ok: false, accessToken: '' })
+      return res.send({ ok: false, accessToken: "" });
     }
 
     let payload: any = null;
     try {
-      payload = verify(token, process.env.ACCESS_TOKEN_REFRESH)
-      console.log('payload ', payload)
+      payload = verify(token, process.env.ACCESS_TOKEN_REFRESH);
+      console.log("token refresh granted ");
     } catch (err) {
-
-      console.log('invalid token? ', err);
-      return res.send({ ok: false, accessToken: '' })
+      console.log("invalid token? ", err);
+      return res.send({ ok: false, accessToken: "" });
     }
 
-    const user = await User.findOne({ id: payload.userId })
+    const user = await User.findOne({ id: payload.userId });
 
     if (!user) {
-      return res.send({ ok: false, accessToken: '' })
+      return res.send({ ok: false, accessToken: "" });
     }
 
-    console.log('User authorized granted access token');
-    // refresh token
+    console.log("User authorized granted access token");
     hydrateToken(res, TokenType.REFRESH, user);
-    return res.send({ ok: true, accessToken: createToken(TokenType.ACCESS, user) })
-  })
+    return res.send({
+      ok: true,
+      accessToken: createToken(TokenType.ACCESS, user)
+    });
+  });
 
-  await createConnection()
+  await createConnection();
   const apolloServer = new ApolloServer({
     schema: await buildSchema({ resolvers: [UserResolver] }),
     context: ({ req, res }) => ({ req, res })
