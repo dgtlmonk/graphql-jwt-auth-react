@@ -1,16 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 import {useRegisterMutation} from '../generated/graphql';
 
 const styles = {
-  form: {maxWidth: `400px`},
+  formShown: {maxWidth: `400px`},
+  formHidden: {display: `none`},
   label: {display: `flex`, flexFlow: `column`, padding: `1em`},
   input: {padding: `8px`},
   button: {padding: `8px`},
 };
 export default function Register() {
   const [register] = useRegisterMutation();
-  const [errors, setErrors] = useState('');
-  const [success, setSuccess] = useState('');
+  const initialState = {
+    errors: '',
+    registerSuccces: null,
+    formStyle: styles.formShown,
+  };
+
+  const [state, setState] = useReducer(
+    (state, newState) => ({...state, ...newState}),
+    {...initialState},
+  );
 
   async function handleSubmit(e: any) {
     e.preventDefault();
@@ -19,18 +28,25 @@ export default function Register() {
     );
     const {email, password, password2} = e.target.elements;
 
-    setErrors('');
     if (
       !email.value ||
       !emailPattern.test(email.value) ||
       !password
     ) {
-      setErrors('invalid email or password');
+      setState({
+        errors: 'invalid email or password',
+        registerSuccces: false,
+      });
+
       return;
     }
 
     if (password.value !== password2.value) {
-      setErrors('password did not match');
+      setState({
+        errors: 'password did not match',
+        registerSuccces: false,
+      });
+
       return;
     }
 
@@ -39,16 +55,28 @@ export default function Register() {
     });
 
     if (resp.data.register) {
-      setSuccess('Register success');
+      console.log('register success');
+      setState({
+        errors: '',
+        registerSuccess: true,
+        successMessage: 'Register Success',
+
+        formStyle: styles.formHidden,
+      });
     }
   }
 
   return (
     <div>
       <h2>Register Page</h2>
-      {errors && <div style={{color: `red`}}>{errors}</div>}
-      {success && <div style={{color: `blue`}}>{success}</div>}
-      <form onSubmit={handleSubmit} style={styles.form}>
+      {state.errors && (
+        <div style={{color: `red`}}>{state.errors}</div>
+      )}
+      {state.registerSuccess && (
+        <div style={{color: `blue`}}>Register Success</div>
+      )}
+
+      <form onSubmit={handleSubmit} style={state.formStyle}>
         <label htmlFor="email" style={styles.label}>
           email
           <input type="text" name="email" style={styles.input} />
