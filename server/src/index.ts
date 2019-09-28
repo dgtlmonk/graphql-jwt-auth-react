@@ -1,6 +1,6 @@
-import "reflect-metadata";
 import cookieParser from "cookie-parser";
 import express from "express";
+import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { createConnection } from "typeorm";
@@ -32,7 +32,6 @@ import { verify } from "jsonwebtoken";
       return res.send({ ok: false, accessToken: "" });
     }
 
-    // refresh token
     hydrateToken(res, TokenType.REFRESH, user);
     return res.send({
       ok: true,
