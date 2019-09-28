@@ -6,7 +6,6 @@ import {
   act,
   cleanup,
 } from '@testing-library/react';
-import {assert} from '../../helpers/test/assert';
 
 import {Register} from '..';
 import {MockedProvider} from '@apollo/react-testing';
@@ -56,8 +55,6 @@ function MockAppWithRegistration() {
 }
 describe('Integration::Registration', () => {
   let btnSubmit;
-  // beforeEach(() => {
-  //     });
 
   it('should display missing email error', () => {
     const {getByText, getByTestId} = render(
@@ -65,7 +62,6 @@ describe('Integration::Registration', () => {
     );
 
     btnSubmit = getByText(/submit/i);
-
     fireEvent.click(btnSubmit);
     expect(getNodeText(getByTestId('errors'))).toMatch(/invalid/i);
     cleanup();
@@ -77,8 +73,6 @@ describe('Integration::Registration', () => {
     );
 
     btnSubmit = getByText(/submit/i);
-
-    // missing password
     fireEvent.change(getByTestId('email'), {
       target: {value: 'foo22@bar.com'},
     });
@@ -110,7 +104,6 @@ describe('Integration::Registration', () => {
     expect(getNodeText(getByTestId('errors'))).toMatch(
       /did not match/i,
     );
-
     cleanup();
   });
 
