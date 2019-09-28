@@ -1,4 +1,6 @@
-import React, {useState, useReducer} from 'react';
+/** @jsx jsx */
+import {jsx} from '@emotion/core';
+import React, {useReducer} from 'react';
 import {useRegisterMutation} from '../generated/graphql';
 
 const styles = {
@@ -8,7 +10,7 @@ const styles = {
   input: {padding: `8px`},
   button: {padding: `8px`},
 };
-export default function Register() {
+export default function Register(props: any) {
   const [register] = useRegisterMutation();
   const initialState = {
     errors: '',
@@ -16,10 +18,9 @@ export default function Register() {
     formStyle: styles.formShown,
   };
 
-  const [state, setState] = useReducer(
-    (state, newState) => ({...state, ...newState}),
-    {...initialState},
-  );
+  const [state, setState] = useReducer((o, n) => ({...o, ...n}), {
+    ...initialState,
+  });
 
   async function handleSubmit(e: any) {
     e.preventDefault();
@@ -30,8 +31,7 @@ export default function Register() {
 
     if (
       !email.value ||
-      !emailPattern.test(email.value) ||
-      !password
+      (!emailPattern.test(email.value) || !password.value)
     ) {
       setState({
         errors: 'invalid email or password',
@@ -60,7 +60,6 @@ export default function Register() {
         errors: '',
         registerSuccess: true,
         successMessage: 'Register Success',
-
         formStyle: styles.formHidden,
       });
     }
@@ -70,16 +69,25 @@ export default function Register() {
     <div>
       <h2>Register Page</h2>
       {state.errors && (
-        <div style={{color: `red`}}>{state.errors}</div>
+        <div data-testid="errors" style={{color: `red`}}>
+          {state.errors}
+        </div>
       )}
       {state.registerSuccess && (
-        <div style={{color: `blue`}}>Register Success</div>
+        <div data-testid="status" style={{color: `blue`}}>
+          Register Success
+        </div>
       )}
 
       <form onSubmit={handleSubmit} style={state.formStyle}>
         <label htmlFor="email" style={styles.label}>
           email
-          <input type="text" name="email" style={styles.input} />
+          <input
+            type="text"
+            name="email"
+            data-testid="email"
+            style={styles.input}
+          />
         </label>
 
         <label htmlFor="password" style={styles.label}>
@@ -87,6 +95,7 @@ export default function Register() {
           <input
             type="password"
             name="password"
+            data-testid="password"
             style={styles.input}
           />
         </label>
@@ -95,6 +104,7 @@ export default function Register() {
           <input
             type="password"
             name="password2"
+            data-testid="password2"
             style={styles.input}
           />
         </label>

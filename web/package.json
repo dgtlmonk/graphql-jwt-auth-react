@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom --watch-all",
     "eject": "react-scripts eject",
     "gen": "graphql-codegen --config codegen.yml"
   },
@@ -39,10 +39,14 @@
     ]
   },
   "devDependencies": {
+    "@apollo/react-testing": "^3.1.1",
+    "@emotion/core": "^10.0.17",
     "@graphql-codegen/cli": "^1.7.0",
     "@graphql-codegen/typescript": "1.7.0",
     "@graphql-codegen/typescript-operations": "1.7.0",
     "@graphql-codegen/typescript-react-apollo": "1.7.0",
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.2.0",
     "@types/graphql": "^14.5.0",
     "@types/react-router-dom": "^5.1.0"
   }
