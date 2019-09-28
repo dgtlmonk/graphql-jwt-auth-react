@@ -10,7 +10,7 @@ const styles = {
   input: {padding: `8px`},
   button: {padding: `8px`},
 };
-export default function Register(props: any) {
+export default function Register() {
   const [register] = useRegisterMutation();
   const initialState = {
     errors: '',
@@ -55,7 +55,6 @@ export default function Register(props: any) {
     });
 
     if (resp.data.register) {
-      console.log('register success');
       setState({
         errors: '',
         registerSuccess: true,
