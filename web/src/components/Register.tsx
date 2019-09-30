@@ -8,7 +8,7 @@ const styles = {
   formHidden: {display: `none`},
   label: {display: `flex`, flexFlow: `column`, padding: `1em`},
   input: {padding: `8px`},
-  button: {padding: `8px`},
+  button: {padding: `8px`, borderRadius: `4px`},
 };
 export default function Register() {
   const [register] = useRegisterMutation();
@@ -66,7 +66,7 @@ export default function Register() {
 
   return (
     <div>
-      <h2>Register Page</h2>
+      <h2>Register </h2>
       {state.errors && (
         <div data-testid="errors" style={{color: `red`}}>
           {state.errors}

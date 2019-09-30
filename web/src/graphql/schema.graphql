@@ -1,0 +1,22 @@
+# source: http://localhost:4000/graphql
+# timestamp: Mon Sep 30 2019 13:31:43 GMT+0800 (PST)
+
+type LoginResponse {
+  accessToken: String!
+}
+
+type Mutation {
+  login(password: String!, email: String!): LoginResponse!
+  register(password: String!, email: String!): Boolean!
+}
+
+type Query {
+  users: [User!]!
+  hello: String!
+  unauthorized: String!
+}
+
+type User {
+  id: Int!
+  email: String!
+}
