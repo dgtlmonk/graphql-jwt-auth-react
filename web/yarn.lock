@@ -18,6 +18,10 @@
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@apollo/react-testing@^3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@apollo/react-testing/-/react-testing-3.1.1.tgz#27a8fb268604f785cf7c1d284a734acfbe039e05"
@@ -26,6 +30,11 @@
     fast-json-stable-stringify "^2.0.0"
     tslib "^1.10.0"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@babel/code-frame@7.5.5", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
@@ -708,7 +717,15 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.0", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0":
+=======
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.4.0":
+>>>>>>> 9253c46... feat: client registation
+=======
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.4.0", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0":
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "7.6.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.2.tgz#c3d6e41b304ef10dcf13777a33e7694ec4a9a6dd"
   dependencies:
@@ -759,6 +776,10 @@
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-9.0.1.tgz#c27b391d8457d1e893f1eddeaf5e5412d12ffbb5"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@emotion/cache@^10.0.17":
   version "10.0.19"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.19.tgz#d258d94d9c707dcadaf1558def968b86bb87ad71"
@@ -825,6 +846,11 @@
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.4.tgz#622a72bebd1e3f48d921563b4b60a762295a81fc"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@graphql-codegen/cli@^1.7.0":
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-1.7.0.tgz#aade52f5c265450258e8fe0e45dc91268e8939a8"
@@ -1130,10 +1156,19 @@
   dependencies:
     any-observable "^0.3.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@sheerun/mutationobserver-shim@^0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz#8013f2af54a2b7d735f71560ff360d3a8176a87b"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
@@ -1223,6 +1258,10 @@
     "@svgr/plugin-svgo" "^4.3.1"
     loader-utils "^1.2.3"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@testing-library/dom@^6.3.0":
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.4.1.tgz#4efd38d896b9b2255025acf9567e2360e1f4814f"
@@ -1256,6 +1295,11 @@
     "@testing-library/dom" "^6.3.0"
     "@types/testing-library__react" "^9.1.0"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@types/babel__core@^7.1.0":
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.3.tgz#e441ea7df63cd080dfcd02ab199e6d16a735fc30"
@@ -1372,12 +1416,21 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@types/react-dom@*":
   version "16.9.1"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.1.tgz#79206237cba9532a9f870b1cd5428bef6b66378c"
   dependencies:
     "@types/react" "*"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@types/react-dom@^16.9.0":
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.0.tgz#ba6ddb00bf5de700b0eb91daa452081ffccbfdea"
@@ -1410,6 +1463,10 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@types/testing-library__dom@*", "@types/testing-library__dom@^6.0.0":
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/@types/testing-library__dom/-/testing-library__dom-6.4.0.tgz#a9411ed4942a11260ffd1790c4d2225959171c72"
@@ -1423,6 +1480,11 @@
     "@types/react-dom" "*"
     "@types/testing-library__dom" "*"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 "@types/valid-url@1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@types/valid-url/-/valid-url-1.0.2.tgz#60fa435ce24bfd5ba107b8d2a80796aeaf3a8f45"
@@ -1871,7 +1933,15 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 aria-query@3.0.0, aria-query@^3.0.0:
+=======
+aria-query@^3.0.0:
+>>>>>>> 9253c46... feat: client registation
+=======
+aria-query@3.0.0, aria-query@^3.0.0:
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/aria-query/-/aria-query-3.0.0.tgz#65b3fcc1ca1155a8c9ae64d6eee297f15d5133cc"
   dependencies:
@@ -2088,6 +2158,10 @@ babel-plugin-dynamic-import-node@2.3.0, babel-plugin-dynamic-import-node@^2.3.0:
   dependencies:
     object.assign "^4.1.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 babel-plugin-emotion@^10.0.14:
   version "10.0.19"
   resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-10.0.19.tgz#67b9b213f7505c015f163a387a005c12c502b1de"
@@ -2103,6 +2177,11 @@ babel-plugin-emotion@^10.0.14:
     find-root "^1.1.0"
     source-map "^0.5.7"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 babel-plugin-istanbul@^5.1.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-istanbul/-/babel-plugin-istanbul-5.2.0.tgz#df4ade83d897a92df069c4d9a25cf2671293c854"
@@ -2118,7 +2197,15 @@ babel-plugin-jest-hoist@^24.9.0:
   dependencies:
     "@types/babel__traverse" "^7.0.6"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 babel-plugin-macros@2.6.1, babel-plugin-macros@^2.0.0:
+=======
+babel-plugin-macros@2.6.1:
+>>>>>>> 9253c46... feat: client registation
+=======
+babel-plugin-macros@2.6.1, babel-plugin-macros@^2.0.0:
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.6.1.tgz#41f7ead616fc36f6a93180e89697f69f51671181"
   dependencies:
@@ -2130,10 +2217,19 @@ babel-plugin-named-asset-import@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/babel-plugin-named-asset-import/-/babel-plugin-named-asset-import-0.3.4.tgz#4a8fc30e9a3e2b1f5ed36883386ab2d84e1089bd"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 babel-plugin-syntax-jsx@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 babel-plugin-syntax-object-rest-spread@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
@@ -2860,7 +2956,15 @@ content-type@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 convert-source-map@1.6.0, convert-source-map@^1.1.0, convert-source-map@^1.4.0, convert-source-map@^1.5.0:
+=======
+convert-source-map@1.6.0, convert-source-map@^1.1.0, convert-source-map@^1.4.0:
+>>>>>>> 9253c46... feat: client registation
+=======
+convert-source-map@1.6.0, convert-source-map@^1.1.0, convert-source-map@^1.4.0, convert-source-map@^1.5.0:
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.6.0.tgz#51b537a8c43e0f04dec1993bffcdd504e758ac20"
   dependencies:
@@ -3079,11 +3183,21 @@ css-what@2.1, css-what@^2.1.2:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.3.tgz#a6d7604573365fe74686c3f311c56513d88285f2"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 css.escape@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
 
 css@^2.0.0, css@^2.2.3:
+<<<<<<< HEAD
+=======
+css@^2.0.0:
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/css/-/css-2.2.4.tgz#c646755c73971f2bba6a601e2cf2fd71b1298929"
   dependencies:
@@ -3182,7 +3296,15 @@ cssstyle@^1.0.0, cssstyle@^1.1.1:
   dependencies:
     cssom "0.3.x"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 csstype@^2.2.0, csstype@^2.5.7:
+=======
+csstype@^2.2.0:
+>>>>>>> 9253c46... feat: client registation
+=======
+csstype@^2.2.0, csstype@^2.5.7:
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "2.6.6"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.6.tgz#c34f8226a94bbb10c32cc0d714afdf942291fc41"
 
@@ -4145,10 +4267,19 @@ find-cache-dir@^2.0.0, find-cache-dir@^2.1.0:
     make-dir "^2.0.0"
     pkg-dir "^3.0.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 find-root@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/find-root/-/find-root-1.1.0.tgz#abcfc8ba76f708c42a97b3d685b7e9450bfb9ce4"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 find-up@3.0.0, find-up@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-3.0.0.tgz#49169f1d7993430646da61ecc5ae355c21c97b73"
@@ -4886,7 +5017,15 @@ imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 indent-string@4.0.0, indent-string@^4.0.0:
+=======
+indent-string@4.0.0:
+>>>>>>> 9253c46... feat: client registation
+=======
+indent-string@4.0.0, indent-string@^4.0.0:
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-4.0.0.tgz#624f8f4497d619b2d9768531d58f4122854d7251"
 
@@ -5405,7 +5544,15 @@ jest-config@^24.9.0:
     pretty-format "^24.9.0"
     realpath-native "^1.1.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 jest-diff@^24.0.0, jest-diff@^24.9.0:
+=======
+jest-diff@^24.9.0:
+>>>>>>> 9253c46... feat: client registation
+=======
+jest-diff@^24.0.0, jest-diff@^24.9.0:
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-24.9.0.tgz#931b7d0d5778a1baf7452cb816e325e3724055da"
   dependencies:
@@ -5509,7 +5656,15 @@ jest-leak-detector@^24.9.0:
     jest-get-type "^24.9.0"
     pretty-format "^24.9.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 jest-matcher-utils@^24.0.0, jest-matcher-utils@^24.9.0:
+=======
+jest-matcher-utils@^24.9.0:
+>>>>>>> 9253c46... feat: client registation
+=======
+jest-matcher-utils@^24.0.0, jest-matcher-utils@^24.9.0:
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-24.9.0.tgz#f5b3661d5e628dffe6dd65251dfdae0e87c3a073"
   dependencies:
@@ -6280,10 +6435,19 @@ mimic-fn@^2.0.0, mimic-fn@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 min-indent@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 mini-create-react-context@^0.3.0:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/mini-create-react-context/-/mini-create-react-context-0.3.2.tgz#79fc598f283dd623da8e088b05db8cddab250189"
@@ -7735,7 +7899,15 @@ pretty-error@^2.1.1:
     renderkid "^2.0.1"
     utila "~0.4"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 pretty-format@^24.0.0, pretty-format@^24.3.0, pretty-format@^24.8.0, pretty-format@^24.9.0:
+=======
+pretty-format@^24.9.0:
+>>>>>>> 9253c46... feat: client registation
+=======
+pretty-format@^24.0.0, pretty-format@^24.3.0, pretty-format@^24.8.0, pretty-format@^24.9.0:
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-24.9.0.tgz#12fac31b37019a4eea3c11aa9a959eb7628aa7c9"
   dependencies:
@@ -8146,6 +8318,10 @@ recursive-readdir@2.2.2:
   dependencies:
     minimatch "3.0.4"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 redent@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/redent/-/redent-3.0.0.tgz#e557b7998316bb53c9f1f56fa626352c6963059f"
@@ -8153,6 +8329,11 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 regenerate-unicode-properties@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/regenerate-unicode-properties/-/regenerate-unicode-properties-8.1.0.tgz#ef51e0f0ea4ad424b77bf7cb41f3e015c70a3f0e"
@@ -8791,7 +8972,15 @@ source-map@0.6.1, source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, sourc
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7:
+=======
+source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6:
+>>>>>>> 9253c46... feat: client registation
+=======
+source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7:
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
@@ -9035,12 +9224,21 @@ strip-eof@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 strip-indent@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-3.0.0.tgz#c32e1cee940b6b3432c771bc2c54bcce73cd3001"
   dependencies:
     min-indent "^1.0.0"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 strip-json-comments@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.0.1.tgz#85713975a91fb87bf1b305cca77395e40d2a64a7"
@@ -9581,10 +9779,19 @@ w3c-xmlserializer@^1.1.2:
     webidl-conversions "^4.0.2"
     xml-name-validator "^3.0.0"
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 wait-for-expect@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/wait-for-expect/-/wait-for-expect-1.3.0.tgz#65241ce355425f907f5d127bdb5e72c412ff830c"
 
+<<<<<<< HEAD
+=======
+>>>>>>> 9253c46... feat: client registation
+=======
+>>>>>>> ebbd364... feat: Register test (needs test on apollo/react-hooks
 walker@^1.0.7, walker@~1.0.5:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/walker/-/walker-1.0.7.tgz#2f7f9b8fd10d677262b18a884e28d19618e028fb"

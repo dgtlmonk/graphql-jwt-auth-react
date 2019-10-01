@@ -1,6 +1,10 @@
 import cookieParser from "cookie-parser";
 import express from "express";
+<<<<<<< HEAD
 import "reflect-metadata";
+=======
+import { UserResolver } from "./resolvers/User";
+>>>>>>> 9253c46... feat: client registation
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { createConnection } from "typeorm";
@@ -13,6 +17,7 @@ import { verify } from "jsonwebtoken";
   const app = express();
   app.use(cookieParser());
   app.post("/refresh-token", async (req, res) => {
+    console.log("header cookies ", req.cookies);
     const token = req.cookies["jwt-auth"];
 
     if (!token) {
@@ -32,6 +37,7 @@ import { verify } from "jsonwebtoken";
       return res.send({ ok: false, accessToken: "" });
     }
 
+    console.log("User authorized granted access token");
     hydrateToken(res, TokenType.REFRESH, user);
     return res.send({
       ok: true,
