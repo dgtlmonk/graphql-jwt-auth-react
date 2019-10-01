@@ -20,6 +20,13 @@ class LoginResponse {
   accessToken: string;
 }
 
+@ObjectType()
+class GenericResponse {
+  @Field()
+  message?: string;
+  @Field()
+  success: boolean;
+}
 @Resolver()
 export class UserResolver {
   @Query(() => [User])
@@ -64,21 +71,37 @@ export class UserResolver {
     };
   }
 
-  @Mutation(() => Boolean)
+  @Mutation(() => GenericResponse)
   async register(
     @Arg("email", () => String) email: string,
     @Arg("password") password: string
-  ) {
+  ): Promise<GenericResponse> {
     try {
+      const user = await User.findOne({ where: { email } });
+
+      if (user) {
+        return {
+          message: "user already exists",
+          success: false
+        };
+      }
+
       const hashedPassword = await hash(password, 12);
       await User.insert({
         email,
         password: hashedPassword
       });
-      return true;
+
+      return {
+        message: "register success",
+        success: true
+      };
     } catch (e) {
       console.log("Error inserting user ", e);
-      return false;
+      return {
+        message: `Something went wrong. ${e}`,
+        success: false
+      };
     }
   }
 }

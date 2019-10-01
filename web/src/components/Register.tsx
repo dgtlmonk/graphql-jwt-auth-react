@@ -46,22 +46,27 @@ export default function Register() {
         errors: 'password did not match',
         registerSuccces: false,
       });
+      return;
+    }
+
+    const qry: any = await register({
+      variables: {email: email.value, password: password.value},
+    });
+
+    if (!qry.data.register) {
+      setState({
+        errors: qry.data.register.message,
+      });
 
       return;
     }
 
-    const resp: any = await register({
-      variables: {email: email.value, password: password.value},
+    setState({
+      errors: '',
+      registerSuccess: true,
+      successMessage: 'Register Success',
+      formStyle: styles.formHidden,
     });
-
-    if (resp.data.register) {
-      setState({
-        errors: '',
-        registerSuccess: true,
-        successMessage: 'Register Success',
-        formStyle: styles.formHidden,
-      });
-    }
   }
 
   return (
