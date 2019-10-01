@@ -1,8 +1,6 @@
 import React from 'react';
-
-// implemetation here is intentional using shared hook
-import {useStateHook, useStateReduce} from '../hooks';
-
+import {useStateReduce} from '../hooks';
+import {useLoginMutation} from '../generated/graphql';
 const styles = {
   formShown: {maxWidth: `400px`},
   formHidden: {display: `none`},
@@ -11,11 +9,12 @@ const styles = {
   button: {padding: `8px`, borderRadius: `4px`},
 };
 
-export default React.memo(function Login() {
-  // warning: i'm using two variats of state hook updates here
-  // for educational purpose - useState and useReducer
-  const {state, updateState} = useStateHook();
-  const {reduceState, updateReduceState} = useStateReduce({});
+export default React.memo(() => {
+  const {reduceState, updateReduceState} = useStateReduce({
+    formStyle: styles.formShown,
+  });
+
+  const [login] = useLoginMutation();
 
   async function handleSubmit(e: any) {
     e.preventDefault();
@@ -23,17 +22,32 @@ export default React.memo(function Login() {
 
     if (!email.value || !password.value) {
       updateReduceState({
-        ...reduceState,
         errors: 'invalid email or password',
       });
       return;
     }
 
-    updateState({
-      errors: '',
-      successMessage: 'logged in',
-    });
-    console.log('form submitted');
+    try {
+      const qry: any = await login({
+        variables: {
+          email: email.value,
+          password: password.value,
+        },
+      });
+
+      if (qry.data.login) {
+        updateReduceState({
+          formStyle: styles.formHidden,
+          successMessage: `User logged in.\nAccess token: ${qry.data.login.accessToken}`,
+        });
+      }
+    } catch (e) {
+      console.log('failed ??');
+      updateReduceState({
+        errors: e.message,
+        successMessage: '',
+      });
+    }
   }
 
   return (
@@ -42,10 +56,16 @@ export default React.memo(function Login() {
       {reduceState.errors && (
         <div data-testid="errors">{reduceState.errors}</div>
       )}
-      {state.successMessage && (
-        <div data-testid="status">{state.successMessage}</div>
+      {reduceState.successMessage && (
+        <div
+          data-testid="status"
+          style={{maxWidth: `400px`, wordBreak: `break-word`}}
+        >
+          <span>{reduceState.successMessage}</span>
+        </div>
       )}
-      <form onSubmit={handleSubmit}>
+
+      <form onSubmit={handleSubmit} style={reduceState.formStyle}>
         <label htmlFor="email" style={styles.label}>
           email
           <input
@@ -58,7 +78,7 @@ export default React.memo(function Login() {
         <label htmlFor="password" style={styles.label}>
           password
           <input
-            type="text"
+            type="password"
             name="password"
             data-testid="password"
             style={styles.input}

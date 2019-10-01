@@ -12,6 +12,8 @@ import {MockedProvider} from '@apollo/react-testing';
 import '@testing-library/jest-dom/extend-expect';
 import gql from 'graphql-tag';
 
+// import {useRegisterMutation } from '../../generated/graphql'
+
 jest.mock('../../generated/graphql', () => {
   return {
     useRegisterMutation: jest.fn(() => [
@@ -55,78 +57,72 @@ function MockAppWithRegistration() {
 }
 describe('Integration::Registration', () => {
   let btnSubmit;
-
-  it('should display missing email error', () => {
+  let t;
+  beforeEach(() => {
     const {getByText, getByTestId} = render(
       <MockAppWithRegistration />,
     );
+    t = {
+      getByText,
+      getByTestId,
+    };
+  });
 
-    btnSubmit = getByText(/submit/i);
-    fireEvent.click(btnSubmit);
-    expect(getNodeText(getByTestId('errors'))).toMatch(/invalid/i);
+  afterAll(() => {
     cleanup();
+  });
+
+  it('should display missing email error', () => {
+    btnSubmit = t.getByText(/submit/i);
+    fireEvent.click(btnSubmit);
+    expect(getNodeText(t.getByTestId('errors'))).toMatch(/invalid/i);
   });
 
   it('should display missing password error', () => {
-    const {getByText, getByTestId} = render(
-      <MockAppWithRegistration />,
-    );
-
-    btnSubmit = getByText(/submit/i);
-    fireEvent.change(getByTestId('email'), {
+    btnSubmit = t.getByText(/submit/i);
+    fireEvent.change(t.getByTestId('email'), {
       target: {value: 'foo22@bar.com'},
     });
     fireEvent.click(btnSubmit);
 
-    expect(getNodeText(getByTestId('errors'))).toMatch(/invalid/i);
-    cleanup();
+    expect(getNodeText(t.getByTestId('errors'))).toMatch(/invalid/i);
   });
 
   it('should display mismatched password error', () => {
-    const {getByText, getByTestId} = render(
-      <MockAppWithRegistration />,
-    );
+    btnSubmit = t.getByText(/submit/i);
 
-    btnSubmit = getByText(/submit/i);
-
-    fireEvent.change(getByTestId('email'), {
+    fireEvent.change(t.getByTestId('email'), {
       target: {value: 'foo22@bar.com'},
     });
-    fireEvent.change(getByTestId('password'), {
+    fireEvent.change(t.getByTestId('password'), {
       target: {value: 'abce'},
     });
 
-    fireEvent.change(getByTestId('password2'), {
+    fireEvent.change(t.getByTestId('password2'), {
       target: {value: 'abcd'},
     });
     fireEvent.click(btnSubmit);
 
-    expect(getNodeText(getByTestId('errors'))).toMatch(
+    expect(getNodeText(t.getByTestId('errors'))).toMatch(
       /did not match/i,
     );
-    cleanup();
   });
 
   it('should display Register Success', async () => {
-    const {getByText, getByTestId} = render(
-      <MockAppWithRegistration />,
-    );
+    btnSubmit = t.getByText(/submit/i);
 
-    btnSubmit = getByText(/submit/i);
-
-    fireEvent.change(getByTestId('email'), {
+    fireEvent.change(t.getByTestId('email'), {
       target: {value: 'foo22@bar.com'},
     });
-    fireEvent.change(getByTestId('password'), {
+    fireEvent.change(t.getByTestId('password'), {
       target: {value: 'abce'},
     });
 
-    fireEvent.change(getByTestId('password2'), {
+    fireEvent.change(t.getByTestId('password2'), {
       target: {value: 'abce'},
     });
 
     await act(() => Promise.resolve(fireEvent.click(btnSubmit)));
-    expect(getNodeText(getByTestId('status'))).toMatch(/success/i);
-    cleanup();
+    expect(getNodeText(t.getByTestId('status'))).toMatch(/success/i);
   });
 });

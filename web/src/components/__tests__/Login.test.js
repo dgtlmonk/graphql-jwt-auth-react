@@ -17,7 +17,9 @@ jest.mock('../../generated/graphql', () => {
       () =>
         Promise.resolve({
           data: {
-            register: true,
+            login: {
+              accessToken: 'abcdefg123',
+            },
           },
         }),
     ]),
@@ -39,7 +41,9 @@ const mocks = [
     },
     result: {
       data: {
-        register: true,
+        login: {
+          accessToken: 'abcdef122',
+        },
       },
     },
   },
@@ -81,6 +85,8 @@ describe('Integration::', () => {
   });
 
   it('Should: display user logged in\n\t Given: valid email and password inputs', async () => {
+    btnSubmit = t.getByText(/submit/i);
+
     fireEvent.change(t.getByTestId('email'), {
       target: {value: 'foo22@bar.com'},
     });
@@ -90,28 +96,7 @@ describe('Integration::', () => {
     });
 
     await act(() => Promise.resolve(fireEvent.click(btnSubmit)));
-    // expect(t.getByTestId('status')).toHaveTextContent(/logged/i);
+
+    expect(t.getByTestId('status')).toHaveTextContent(/logged/i);
   });
-  // it('should display Register Success', async () => {
-  //   const {getByText, getByTestId} = render(
-  //     <MockAppWithLogin />,
-  //   );
-
-  //   btnSubmit = getByText(/submit/i);
-
-  //   fireEvent.change(getByTestId('email'), {
-  //     target: {value: 'foo22@bar.com'},
-  //   });
-  //   fireEvent.change(getByTestId('password'), {
-  //     target: {value: 'abce'},
-  //   });
-
-  //   fireEvent.change(getByTestId('password2'), {
-  //     target: {value: 'abce'},
-  //   });
-
-  //   await act(() => Promise.resolve(fireEvent.click(btnSubmit)));
-  //   expect(getNodeText(getByTestId('status'))).toMatch(/success/i);
-  //   cleanup();
-  // });
 });

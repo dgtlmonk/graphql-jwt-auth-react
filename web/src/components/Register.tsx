@@ -50,11 +50,14 @@ export default function Register() {
       return;
     }
 
-    const resp: any = await register({
-      variables: {email: email.value, password: password.value},
+    const qry: any = await register({
+      variables: {
+        email: email.value,
+        password: password.value,
+      },
     });
 
-    if (resp.data.register) {
+    if (qry.data.register) {
       setState({
         errors: '',
         registerSuccess: true,
