@@ -1,10 +1,6 @@
 import cookieParser from "cookie-parser";
 import express from "express";
-<<<<<<< HEAD
 import "reflect-metadata";
-=======
-import { UserResolver } from "./resolvers/User";
->>>>>>> 9253c46... feat: client registation
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { createConnection } from "typeorm";
