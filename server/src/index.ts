@@ -13,6 +13,7 @@ import { verify } from "jsonwebtoken";
   const app = express();
   app.use(cookieParser());
   app.post("/refresh-token", async (req, res) => {
+    console.log("header cookies ", req.cookies);
     const token = req.cookies["jwt-auth"];
 
     if (!token) {
@@ -32,6 +33,7 @@ import { verify } from "jsonwebtoken";
       return res.send({ ok: false, accessToken: "" });
     }
 
+    console.log("User authorized granted access token");
     hydrateToken(res, TokenType.REFRESH, user);
     return res.send({
       ok: true,

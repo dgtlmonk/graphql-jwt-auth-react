@@ -7,7 +7,7 @@ import {
   cleanup,
 } from '@testing-library/react';
 
-import {Register} from '..';
+import {Register} from '../../components';
 import {MockedProvider} from '@apollo/react-testing';
 import '@testing-library/jest-dom/extend-expect';
 import gql from 'graphql-tag';
